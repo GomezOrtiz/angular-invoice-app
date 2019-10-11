@@ -1,0 +1,52 @@
+<main class="container py-4">
+    <div class="card bdr-main">
+        <div class="card-header bdr-main">
+            <h1 class="h2 txt-dark my-3">{{title}}</h1>
+        </div>
+        <div class="card-body bdr-main">
+            <ul *ngIf="client" class="list-group">
+                <li class="list-group-item">
+                    <span class="font-weight-bold mr-2">{{detail.name}}</span>
+                    <span>{{client.name}}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="font-weight-bold mr-2">{{detail.surname}}</span>
+                    <span>{{client.surname}}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="font-weight-bold mr-2">{{detail.email}}</span>
+                    <span>{{client.email}}</span>
+                </li>
+                <li class="list-group-item">
+                    <span class="font-weight-bold mr-2">{{detail.createdAt}}</span>
+                    <span>{{client.createdAt | date}}</span>
+                </li>
+            </ul>
+            <div class="alert alert-main my-4" *ngIf="client && client.invoices && !client.invoices.length && client">{{detail.notFound}} {{client.name}} {{client.surname}}</div>			
+				<table *ngIf="client && client.invoices && client.invoices.length" class="table table-bordered table-striped my-4">
+					<thead class="bg-second text-light">
+						<tr>
+							<th>{{detail.invoice}}</th>
+							<th>{{detail.details}}</th>
+							<th>{{detail.date}}</th>
+							<th>{{detail.total}}</th>
+							<th>{{detail.delete}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let invoice of client.invoices">
+							<td>
+							<span>{{invoice.description}}</span>
+							<a [routerLink]="['/invoices/', invoice.id]"><div class="badge badge-main margin ml-2"><span><i class="fas fa-search-plus mr-1"></i><span>{{detail.show}}</span></span></div></a>
+							</td>
+							<td>{{invoice.details}}</td>
+							<td>{{invoice.createdAt | date}}</td>
+							<td>{{invoice.total}}</td>
+							<td><a class="btn text-light btn-red btn-xs open-delete-modal" (click)="delete(invoice.id)">X</a></td>
+						</tr>
+					</tbody>
+                </table>
+                <div><button *ngIf="client" class="btn btn-green d-block mx-auto"><a class="txt-white" [routerLink]="['/invoices/', client.id, 'new']"><span>{{detail.newInvoice}}</span></a></button></div>
+        </div>
+    </div>
+</main>

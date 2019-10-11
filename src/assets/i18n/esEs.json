@@ -1,0 +1,48 @@
+{
+    "header": {
+        "companyName": "Fake Corp.",
+        "clients": "Clientes",
+        "products": "Productos",
+        "invoice": "Nueva factura",
+        "signup": "Nuevo usuario"
+    },
+    "footer": {
+        "description": "Powered by Java, Spring, Angular, Bootstrap, MyBatis y MySQL"
+    },
+    "search": {
+        "clients": "Busca un cliente",
+        "button": "Buscar"
+    },
+    "clients" : {
+        "list": {
+            "add": "Añadir",
+            "name": "Nombre",
+            "surname": "Apellido",
+            "email": "Correo electrónico",
+            "createdAt": "Fecha de creación",
+            "detail": "Ver detalle",
+            "edit": "Editar",
+            "delete": "Eliminar"
+        },
+        "detail": {
+            "name": "Nombre: ",
+            "surname": "Apellido: ",
+            "email": "Correo electrónico: ",
+            "createdAt": "Fecha de creación: ",
+            "notFound": "No se han encontrado facturas para el cliente",
+            "invoice": "Factura / Concepto",
+            "details": "Observaciones",
+            "date": "Fecha de factura",
+            "total": "Total",
+            "delete": "Eliminar",
+            "show": "Ver",
+            "newInvoice": "Añadir factura"
+        },
+        "form": {
+            "name": "Nombre: ",
+            "surname": "Apellido: ",
+            "email": "Correo electrónico: ",
+            "submit": "Enviar"
+        }
+    }
+}

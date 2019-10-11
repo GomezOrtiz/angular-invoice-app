@@ -1,0 +1,23 @@
+<main class="container">
+	
+		<div class="card bdr-main my-5">
+			<div class="card-header bdr-main"><h1 class="h2 txt-dark my-3">{{title}}</h1></div>
+			<div class="card-body">		
+				<form (ngSubmit)="create()" method="post">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="name">{{form.name}}</label>
+						<div class="col-sm-6"><input type="text" id="name" class="form-control" name="name" [(ngModel)]="client.name"/></div>	
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="surname">{{form.surname}}</label>
+						<div class="col-sm-6"><input type="text" id="surname" class="form-control" name="surname" [(ngModel)]="client.surname"/></div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="email">{{form.email}}</label>
+						<div class="col-sm-6"><input type="text" id="email" class="form-control" name="email" [(ngModel)]="client.email"/></div>
+					</div>	
+					<button type="submit" class="btn btn-main mt-3">{{form.submit}}</button>
+				</form>
+			</div>
+		</div>
+	</main>
